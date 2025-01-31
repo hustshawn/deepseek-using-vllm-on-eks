@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: deepseek-chatbot
-        image: __IMAGE_DEEPSEEK_CHATBOT__
+        image: ghcr.io/hustshawn/deepseek-using-vllm-on-eks/chatbot-ui:latest
         ports:
         - containerPort: 7860
         env:
@@ -50,9 +50,9 @@ spec:
   selector:
     app: deepseek-chatbot
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 7860
+  - protocol: TCP
+    port: 80
+    targetPort: 7860
   type: ClusterIP
 ---
 apiVersion: v1
